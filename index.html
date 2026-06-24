@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SN Emerson Investment Ltd</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+<div class="body-container">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="banner-section-index">
+            <div class="hero-index-content">
+                <h1>Welcome to SN Emerson Investment Ltd</h1>
+                <p>Your trusted partner in global investment and services.</p>
+                <a href="services.html" class="hero-btn">Explore Services</a>
+            </div>
+        </section>
+
+        <section class="about-snippet">
+            <div class="about-container">
+                <h2>About SN Emerson Investment Ltd</h2>
+                <p>We provide innovative investment solutions and connect businesses to global markets, ensuring efficiency and reliability across all sectors. Our expertise spans agro-allied products, minerals, metals, energy feedstocks, and market entry services.</p>
+                <a href="about.html" class="hero-btn">Read More →</a>
+            </div>
+        </section>
+
+        <section class="services-preview">
+            <h2 class="services-title">Our Core Services</h2>
+
+            <div class="services-grid">
+
+                <div class="service-box">
+                    <img src="img/Integrated Solutions.jpg" alt="Integrated Solutions">
+                    <h3>Integrated Value Chain Solutions</h3>
+                    <p>We deliver integrated solutions across the value chain, ensuring efficiency from procurement to delivery.</p>
+                    <a href="services.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-box">
+                    <img src="img/Commodity Trading2.png" alt="Commodity Trading">
+                    <h3>Commodity Trading</h3>
+                    <p>A diverse portfolio spanning agro-allied products, minerals, metals, and energy feedstocks, connecting producers to global markets.</p>
+                    <a href="services.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-box">
+                    <img src="img/Market Entry Advisory.jpg"alt="Market Entry Advisory">
+                    <h3>African Market Entry Support</h3>
+                    <p>Assisting companies entering African markets through due diligence, research, representation, and strategic procurement.</p>
+                    <a href="services.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-box">
+                    <img src="img/Supply Chain.png" alt="Supply Chain">
+                    <h3>Supply Chain & Logistics</h3>
+                    <p>Robust supply chain handling including haulage, freight, clearing & forwarding, and import/export cargo management.</p>
+                    <a href="services.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-box">
+                    <img src="img/Packaging.png" alt="Processing & Packaging">
+                    <h3>Processing & Packaging</h3>
+                    <p>Value-added processing and professional packaging of raw materials customized for various industrial and commercial uses.</p>
+                    <a href="services.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-box contact-box">
+                    <img src="img/Contact Us.jpg" alt="Contact Us">
+                    <h3>Contact Us</h3>
+                    <p>Have questions or need our services? Reach out today for inquiries or support.</p>
+                    <a href="contact.html" class="learn-more">Get in Touch →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>Ready to grow your business with us?</h2>
+                <p>Contact us today to discuss how we can help you achieve success in African and global markets.</p>
+                <a href="contact.html" class="hero-btn">Get in Touch</a>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <h2>What Our Clients Say</h2>
+
+            <div class="testimonials-container">
+
+                <div class="testimonial-box">
+                    <p>"SN Emerson has transformed our supply chain operations. Highly professional and reliable."</p>
+                    <span>WOKE BIOMASS PORTUGAL</span>
+                </div>
+
+                <div class="testimonial-box">
+                    <p>"Their market entry advice helped our company expand into Africa seamlessly."</p>
+                    <span>SIX WINNERS AG</span>
+                </div>
+
+                <div class="testimonial-box">
+                    <p>"Efficient, transparent, and trustworthy — our go-to investment partner."</p>
+                    <span>FIRST CREED LTD</span>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Your main JS -->
+    <script src="js/main.js"></script>
+
+    <!-- Hidden Admin Login Link -->
+<a href="admin-login.html" id="admin-login-link" style="display:none;">Admin Login</a>
+
+    <!-- Shortcut Script -->
+    <script>
+        document.addEventListener("keydown", function(e) {
+            if (e.shiftKey && e.key === "A") {
+
+                const link = document.getElementById("admin-login-link");
+
+                // Style & show link
+                link.style.display = "block";
+                link.style.position = "fixed";
+                link.style.bottom = "10px";
+                link.style.right = "10px";
+                link.style.backgroundColor = "#222";
+                link.style.color = "#fff";
+                link.style.padding = "8px 12px";
+                link.style.borderRadius = "6px";
+                link.style.fontSize = "14px";
+                link.style.zIndex = "9999";
+                link.textContent = "Admin Dashboard";
+
+                e.preventDefault(); 
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

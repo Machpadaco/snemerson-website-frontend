@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - SN Emerson Investment Ltd</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <!-- HERO BANNER -->
+        <section class="banner-section-payment">
+            <div class="hero-payment-content">
+                <h1>Welcome to SN Emerson Investment Ltd <br> Payment Portal</h1>
+                <p>Your trusted partner in global investment and services.</p>
+                <a href="services.html" class="hero-btn">Explore Services</a>
+            </div>
+        </section>
+
+        <!-- PAYMENT FORM CARD -->
+        <section class="max-w-3xl mx-auto mt-10 bg-white p-8 rounded-xl shadow-md">
+
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">
+                Confirm Your Payment
+            </h2>
+
+            <p class="mb-6 text-gray-600 text-center">
+                Fill out this form after making payment to our provided account.
+            </p>
+
+            <!-- Payment Form -->
+            <form id="paymentForm" class="space-y-5">
+
+                <div>
+                    <label class="font-medium block mb-1">Full Name</label>
+                    <input id="payerName" type="text" class="w-full p-3 border rounded-lg" required />
+                </div>
+
+                <div>
+                    <label class="font-medium block mb-1">Amount Paid</label>
+                    <input id="amountPaid" type="number" min="1" class="w-full p-3 border rounded-lg" required />
+                </div>
+
+                <div>
+                    <label class="font-medium block mb-1">Payment Purpose</label>
+                    <input id="purpose" type="text" class="w-full p-3 border rounded-lg" required />
+                </div>
+
+                <div>
+                    <label class="font-medium block mb-1">Phone Number</label>
+                    <input id="phoneNumber" type="tel" class="w-full p-3 border rounded-lg" required />
+                </div>
+
+                <div>
+                    <label class="font-medium block mb-1">Upload Receipt</label>
+                    <input id="receiptFile" type="file" accept="image/*,.pdf" class="w-full p-3 border rounded-lg" required />
+                    <p class="text-xs text-gray-500 mt-1">Max size: 1MB</p>
+                </div>
+
+                <button class="w-full py-3 mt-4 bg-[#031A6B] text-white font-semibold rounded-lg 
+                    hover:bg-[#02134f] transition duration-300 shadow-md hover:shadow-lg">
+                    Submit Payment
+                </button>
+
+            </form>
+
+            <p id="message" class="mt-4 text-center text-sm font-medium"></p>
+
+        </section>
+
+    </main>
+
+    <!-- Quick Links -->
+    <div id="quickLinksContainer"></div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Main JS (loads components and site scripts) -->
+    <script src="js/main.js"></script>
+
+    <!-- Hidden Admin Login Link -->
+    <a href="admin-login.html" id="admin-login-link" style="display:none;">Admin Login</a>
+
+    <!-- Shortcut Script (SHIFT + A) -->
+    <script>
+        document.addEventListener("keydown", function(e) {
+            if (e.shiftKey && e.key === "A") {
+                const link = document.getElementById("admin-login-link");
+
+                link.style.display = "block";
+                link.style.position = "fixed";
+                link.style.bottom = "10px";
+                link.style.right = "10px";
+                link.style.backgroundColor = "#222";
+                link.style.color = "#fff";
+                link.style.padding = "8px 12px";
+                link.style.borderRadius = "6px";
+                link.style.fontSize = "14px";
+                link.style.zIndex = "9999";
+                link.textContent = "Admin Dashboard";
+
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    <!-- Firebase MUST load BEFORE firebasePayment.js -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/notifications.js"></script>
+    <script type="module" src="js/firebasePayment.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel - SN Emerson</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body { font-family: 'Poppins', sans-serif; background: #f8fafc; margin: 0; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 12px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #0f172a; color: white; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+
+    .logout-btn {
+        float: right;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background: #ea580c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1>Admin Panel - Contact Messages</h1>
+
+<button class="logout-btn" id="logoutBtn">Logout</button>
+
+<table id="messagesTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service</th>
+            <th>Message</th>
+            <th>Submitted At</th>
+        </tr>
+    </thead>
+
+    <tbody id="messagesTableBody"></tbody>
+</table>
+
+<script type="module" src="js/firebase-config.js"></script>
+<script type="module" src="js/admin-panel.js"></script>
+
+</body>
+</html>

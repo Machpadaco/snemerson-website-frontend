@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SN Emerson Investment Ltd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="body-container">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="banner-section-contact">
+            <div class="banner-content-contact">
+                <h1>Contact SN Emerson Investment Ltd</h1>
+                <p>Leaders in Commodity Trading, Logistics, Procurement & Support Services</p>
+                <a href="services.html" class="hero-btn">Explore Services</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding contact-section">
+            <div class="container">
+                <div class="contact-container">
+
+                    <div class="contact-info">
+                        <h2>Ready to Partner?</h2>
+                        <p>Whether you are looking to source commodities or require logistics support, SN Emerson is here to assist.</p>
+                        <br>
+                        <p><i class="fas fa-envelope"></i> Peter.Sunday@snemerson.com</p>
+                        <p><i class="fas fa-envelope"></i> sn.emersonltd@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Plot 280, Trans-Amadi Industrial Layout, Port Harcourt Rivers State, Nigeria</p>
+                        <p><i class="fas fa-phone"></i> Call: 07054645506</p>
+                        <p><i class="fab fa-whatsapp"></i> Whatsapp: 07054645506</p>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contactForm" class="recaptcha-form">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" id="name" name="userName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" id="email" name="userEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Service of Interest</label>
+                                <select id="service" name="serviceOfInterest">
+                                    <option>Commodity Trading</option>
+                                    <option>Logistics</option>
+                                    <option>Market Support</option>
+                                    <option>Packaging</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea id="message" name="userMessage" rows="4" placeholder="How can we help you?"></textarea>
+                            </div>
+
+                            <div class="g-recaptcha" data-sitekey="6LdvqCAsAAAAAKTwbfVnCNFaLYzfPGwEp0qVZGya"></div>
+
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="quickLinksContainer"></div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/form-saver.js"></script>
+    <script src="js/recaptcha.js"></script>
+    
+    </div>
+</body>
+</html>

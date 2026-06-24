@@ -1,0 +1,1986 @@
+body {
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+    background-color: #f8fafc;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* full viewport width */
+    overflow-x: hidden; /* CRITICAL: Prevents horizontal scrollbar if 100vw is used */
+}
+
+/* Container for content */
+body.container {
+    width: 100%;        /* takes full width of body */
+    max-width: 1200px;  /* limits content on large screens */
+    margin: 0 auto;     /* centers content */
+    padding: 0 1rem;    /* optional spacing for small screens */
+}
+
+@media (max-width: 1024px) {
+    .container { padding: 0 2%; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 3%; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0 4%; }
+}
+
+
+/* Header styles */
+#header-container {
+    background-color: #f8fafc;
+    color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo left, nav right */
+    width: 100%;
+    max-width: 1200px; /* center the content */
+    margin: 0 auto 0.5rem auto; 
+    padding: 0 5%; 
+    height: 15vh;
+    box-sizing: border-box;
+}
+
+/* NEW GROUPING CONTAINER */
+.logo-brand-group {
+    display: flex; /* Ensures logo and h1 are side-by-side */
+    align-items: center;
+}
+
+/* Company Name H1 */
+.logo-brand-group h1 {
+    color: chocolate;
+    margin: 0 0 0 0.1rem;
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.1;
+}
+
+.company-bold {
+    font-weight: 800; 
+    color: #181717;
+    letter-spacing: 0.06rem;
+}
+
+.company-thin {
+    font-weight: 300;
+    color: #949391;
+    letter-spacing: 0.03rem;
+}
+
+/* Logo image */
+.logo-brand-group img {
+    width: 60px; /* Use absolute sizing for better consistency */
+    height: auto;
+    margin-right: 0.6rem;
+}
+
+/* Main Navigation */
+.main-nav {
+    margin-left: auto; /* Push nav to the right on desktop */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #0f0f0f;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    display: inline-block;
+    white-space: nowrap; /* Prevents links from breaking onto new lines */
+}
+
+.main-nav a:hover, nav a.active {
+    background-color: #f56512;
+    color: #f8fafc;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES (Fixing Mobile Stack) */
+/* --------------------------------------------- */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    #header-container {
+        /* This allows the logo/brand group and nav to wrap if space is tight */
+        flex-wrap: wrap; 
+        justify-content: center;
+        height: auto; 
+        padding: 1rem 4%;
+    }
+    
+    .logo-brand-group {
+        margin-right: 0; /* Clear right margin for center alignment */
+        width: 100%; /* Ensure the group takes full width for stacking */
+        justify-content: center; /* Center the entire logo/brand group */
+    }
+
+    .logo-brand-group h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0; /* Clean up margins */
+    }
+    
+    .logo-brand-group img {
+        width: 50px; /* Slightly smaller logo */
+        margin-right: 0.5rem;
+    }
+    
+    .main-nav {
+        margin-left: 0;
+        text-align: center;
+        width: 100%; /* Nav links take full width below the logo/brand group */
+        margin-top: 0.5rem;
+    }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+    .logo-brand-group h1 {
+        font-size: 1rem;
+    }
+    .logo-brand-group img {
+        width: 40px; 
+    }
+    .main-nav a {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small mobile (480px and below) */
+@media (max-width: 480px) {
+    #header-container {
+        flex-direction: column; /* Main stacking mechanism */
+        padding: 1rem 3%;
+    }
+    
+    /* Center the logo and text container */
+    .logo-brand-group {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-brand-group img {
+        width: 35px; /* Smallest logo size */
+    }
+
+    .main-nav a {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* --------------------------------------------- */
+/* ===== 3. BANNER SECTION (Full-Width & Centralized) ===== */
+.banner-section-index {
+    width: 100%; /* Full container width instead of 100vw */
+    position: relative;
+    height: 80vh; /* Full viewport height on desktop */
+    background: url("../img/banners/4.jpg") center center / cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; /* Centers .hero-index-content horizontally */
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+
+/* Dark overlay */
+.banner-section-index::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 13, 13, 0.5);
+    z-index: 1;
+}
+
+/* Content Container (Centralized and Constrained) */
+.hero-index-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px; /* Constrains the total content block width */
+    width: 90%; 
+    margin: 0 auto; /* Centers the content block */
+    padding: 0 5%; /* Adds internal spacing on sides */
+}
+
+/* Title (Styles Maintained) */
+.hero-index-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 0.06rem;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.4);
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Subtitle (Styles Maintained) */
+.hero-index-content p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #f2f2f2;
+    letter-spacing: 0.03rem;
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+    text-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Button (Color RESTORED) */
+.hero-btn {
+    display: inline-block;
+    padding: 0.75rem 1.9rem; /* 12px 30px */
+    background: #ffcc00; /* RESTORED: Original Yellow/Gold color */
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    box-shadow: 0 0.25rem 0.6rem rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #ffe046;
+    transform: scale(1.05);
+}
+
+/* Animations (Maintained) */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* ========================================================= */
+/* ===== RESPONSIVE MEDIA QUERIES FOR BANNER SECTION ====== */
+/* ========================================================= */
+
+
+/* -------------------------------------- */
+/* 1. EXTRA SMALL PHONES (0–480px) */
+/* -------------------------------------- */
+@media (max-width: 480px) {
+
+    .banner-section-index {
+        height: 45vh; /* Reduce height → avoids overflow on tiny screens */
+        background-position: center top; /* Fix background cropping */
+        padding: 0 1rem;
+    }
+
+    .hero-index-content {
+        width: 95%;
+        padding: 0 3%;
+    }
+
+    .hero-index-content h1 {
+        font-size: 1.9rem;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+    }
+
+    .hero-index-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-btn {
+        padding: 0.6rem 1.4rem;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* -------------------------------------- */
+/* 2. SMALL PHONES (481–767px) */
+/* -------------------------------------- */
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .banner-section-index {
+        height: 55vh;
+        background-position: center;
+        padding: 0 1.5rem;
+    }
+
+    .hero-index-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-index-content p {
+        font-size: 1.15rem;
+    }
+
+    .hero-btn {
+        padding: 0.7rem 1.6rem;
+        font-size: 1rem;
+    }
+}
+
+
+/* -------------------------------------- */
+/* 3. TABLETS (768–1024px) */
+/* -------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .banner-section-index {
+        height: 75vh;
+        padding: 0 2rem;
+        background-position: center center;
+    }
+
+    .hero-index-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-index-content p {
+        font-size: 1.25rem;
+    }
+
+    .hero-btn {
+        padding: 0.75rem 1.7rem;
+        font-size: 1.05rem;
+    }
+}
+
+
+/* -------------------------------------- */
+/* 4. DESKTOPS (1025px and above) */
+/* -------------------------------------- */
+@media (min-width: 1025px) {
+
+    .banner-section-index {
+        height: 80vh; /* Full-screen banner */
+    }
+
+    .hero-index-content h1 {
+        font-size: 3.2rem; /* Original */
+    }
+
+    .hero-index-content p {
+        font-size: 1.4rem; /* Original */
+    }
+
+    .hero-btn {
+        font-size: 1.1rem; /* Original */
+    }
+}
+
+/* About Snippet - Optimized for Responsiveness and Centralization */
+.about-snippet {
+    /* Use max-width and margin: auto for centralization */
+    width: 90%; 
+    max-width: 1200px; /* Constrain width on large screens */
+    margin: 40px auto; 
+    padding: 40px 20px;
+    text-align: center;
+    background: #f2f2f2;
+    border-radius: 10px;
+    box-sizing: border-box; /* Ensures padding is calculated inward */
+}
+
+.about-snippet h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fa6705;
+}
+
+.about-snippet p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.about-snippet .hero-btn {
+    /* RESTORED: Uses the global yellow/gold hero-btn style */
+    background: #ffcc00; 
+    color: #000;
+}
+
+/* --------------------------------------------- */
+/* 📱 MEDIA QUERIES for .about-snippet */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .about-snippet {
+        padding: 30px 15px; /* Reduce internal padding */
+    }
+    .about-snippet h2 {
+        font-size: 1.8rem; /* Scale down title */
+    }
+    .about-snippet p {
+        font-size: 1rem; /* Scale down paragraph text */
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    .about-snippet {
+        margin: 30px auto; /* Slightly reduce vertical margin */
+        padding: 25px 10px;
+    }
+    .about-snippet h2 {
+        font-size: 1.5rem; /* Further scale down title */
+    }
+    .about-snippet p {
+        font-size: 0.9rem; /* Further scale down paragraph text */
+    }
+    /* Hero button scaling is handled by the global media queries for .hero-btn */
+}
+
+
+/* SERVICES SECTION CONTAINER - Optimized */
+.services-preview {
+    width: 100%;
+    background: #000; /* Maintained: Black background */
+    text-align: center;
+    color: #fff;
+    padding-top: 2%;
+    padding-bottom: 40px; /* Added standardized bottom padding */
+    height: auto; /* FIX: Replaced fixed height for responsiveness */
+    box-sizing: border-box;
+}
+
+/* Section Title (Maintained) */
+.services-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Services Grid - Optimized for Centralization */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+    gap: 25px;
+    max-width: 1200px; /* FIX: Center the grid content */
+    width: 90%; /* Responsive width */
+    margin: 0 auto; /* FIX: Center the grid horizontally */
+    box-sizing: border-box;
+    background-color: #000;
+}
+
+/* Individual Service Box (Maintained) */
+.service-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2%;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    width: auto; /* FIX: Use auto width for grid child */
+    height: 45vh;
+}
+
+/* Service Box Content (Maintained) */
+.service-box img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.service-box h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.service-box p {
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* Hover Effect (Maintained) */
+.service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border-color: #c8102e; /* Maintained: Red border */
+    background-color: #706e6d; /* Maintained: Grey background */
+    color: #fff;
+}
+
+/* Change h3 and p text color when hovering (Maintained) */
+.service-box:hover h3,
+.service-box:hover p {
+    color: #fff;
+}
+
+/* Learn More Link (Maintained) */
+.learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #c8102e; /* Maintained: Red color */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.learn-more:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Contact Box (Maintained) */
+.contact-box img {
+    width: 70px;
+    height: 70px;
+}
+
+.contact-box h3 {
+    font-weight: 800;
+}
+
+/* --------------------------------------------- */
+/* 📱 MEDIA QUERIES for Services Grid */
+/* --------------------------------------------- */
+
+/* Tablet Layout (Max 1024px) */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+        width: 95%; /* Use more width on tablets */
+    }
+    .service-box {
+        height: 40vh; /* Adjust height slightly */
+    }
+    .services-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile Layout (Max 768px) */
+@media (max-width: 768px) {
+    .services-preview {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr; /* Change to 1 column */
+        width: 90%;
+        gap: 20px;
+    }
+    .service-box {
+        height: 20vh; /* Allow height to adjust naturally */
+        min-height: 250px;
+    }
+    .services-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* CTA Section - Optimized for Responsiveness and Centralization */
+.cta-section {
+    /* Centralization: Constrain width and center */
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 50px auto; 
+    padding: 50px 20px;
+    text-align: center;
+    background: #0f1b40; /* Maintained: Dark blue background */
+    color: #fff; /* Maintained: White text */
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.cta-section .hero-btn {
+    /* Color FIX: Uses the global yellow/gold hero-btn style */
+    background: #ffcc00; 
+    color: #000;
+}
+
+/* --------------------------------------------- */
+/* 📱 MEDIA QUERIES for .cta-section */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 40px 15px; /* Reduce internal padding */
+    }
+    .cta-section h2 {
+        font-size: 1.7rem; /* Scale down title */
+    }
+    .cta-section p {
+        font-size: 1rem; /* Scale down paragraph text */
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    .cta-section {
+        margin: 30px auto; /* Slightly reduce vertical margin */
+        padding: 30px 10px;
+    }
+    .cta-section h2 {
+        font-size: 1.4rem; /* Further scale down title */
+    }
+    .cta-section p {
+        font-size: 0.9rem; /* Further scale down paragraph text */
+    }
+}
+
+/* Testimonials Section - Optimized for Responsiveness and Centralization */
+.testimonials-section {
+    /* Centralization: Constrain width and center */
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 50px auto; 
+    padding: 40px 0; /* Adjusted padding to use horizontal spacing from width/margin */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.testimonials-container {
+    /* Excellent responsiveness already built-in with auto-fit/minmax! */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Testimonial Box Styles (Maintained) */
+.testimonial-box {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.testimonial-box p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial-box span {
+    font-weight: bold;
+    color: #0f0f0f;
+}
+
+/* --------------------------------------------- */
+/* 📱 MEDIA QUERIES for .testimonials-section */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .testimonials-section {
+        margin: 40px auto; /* Slightly less vertical margin */
+        padding: 30px 0;
+    }
+    .testimonials-section h2 {
+        font-size: 1.8rem; /* Scale down title */
+        margin-bottom: 25px;
+    }
+    .testimonial-box {
+        padding: 15px; /* Slightly reduce internal padding */
+    }
+    .testimonial-box p {
+        font-size: 0.95rem; /* Scale down text slightly */
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    /* The testimonial-container grid will automatically drop to 1 column 
+       when the viewport is too narrow for two 250px boxes (minmax is doing the work!) */
+    .testimonials-section {
+        margin: 30px auto;
+        padding: 20px 0;
+    }
+    .testimonials-section h2 {
+        font-size: 1.5rem; /* Further scale down title */
+    }
+}
+
+/* QUICK LINKS SECTION - Optimized for Centralization and Full-Bleed Border */
+#quick-links-section {
+    /* Centralization: Constrain and center the visible content area */
+    max-width: 1200px;
+    width: 90%; 
+    margin: 40px auto; 
+    
+    background: #f8fafc; /* Maintained: Light background */
+    padding: 30px 0; /* Vertical padding only, horizontal padding handled by container */
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Full-width top border (FIXED for 100% viewport width) */
+#quick-links-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    
+    /* FIX: Use this robust technique to achieve full-bleed effect on a centered container */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    
+    height: 3px;
+    background-color: #c8102e; /* Maintained: Red border color */
+    z-index: 1; /* Ensure border is on top if needed */
+}
+
+.quick-links-container {
+    /* FIX: Set to 100% to fit perfectly within the centralized #quick-links-section */
+    width: 100%; 
+    margin: 0 auto;
+    
+    display: grid;
+    /* Grid maintained: excellent for responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 25px;
+    padding: 0 10px; /* Small inner padding to keep content off the edges */
+}
+
+/* Quick Link Box Styles (Maintained) */
+.quick-link {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.quick-link img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.quick-link h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f0f0f;
+}
+
+/* Hover Effects (Maintained) */
+.quick-link:hover {
+    background: #0f1b40; /* Maintained: Dark blue hover */
+    transform: translateY(-7px);
+    border-color: #c8102e; /* Maintained: Red border on hover */
+}
+
+.quick-link:hover h4 {
+    color: #fff;
+}
+
+.quick-link:hover img {
+    filter: brightness(90%) invert(1);
+}
+
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    #quick-links-section {
+        width: 95%; /* Use slightly more width on tablets */
+        padding: 20px 0;
+    }
+    .quick-link {
+        padding: 15px;
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    /* The grid handles the stacking automatically thanks to minmax(150px, 1fr) */
+    .quick-link {
+        padding: 10px;
+    }
+    .quick-link h4 {
+        font-size: 0.9rem; /* Scale down text */
+    }
+}
+
+/* Services Page Banner - Optimized for Full Width Coverage */
+.services-page-banner {
+    width: 100vw; /* FORCED FULL SCREEN WIDTH */
+    height: 50vh;
+    /* Centralization for full-width elements */
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: url("../img/banners/banner new8.png") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+    /* Removed redundant padding: 10% here; centralization is handled by content below */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.services-page-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.services-page-banner-content {
+    /* Centralization of content inside the full-width banner */
+    position: relative;
+    z-index: 2;
+    max-width: 1200px; /* Constrains content on large screens */
+    width: 90%; /* Ensures responsiveness */
+    padding: 0 10px; /* Small inner padding for tight edges */
+    margin: 0 auto; /* Centers the content wrapper */
+}
+
+.services-page-banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.services-page-banner-content p {
+    font-size: 1.2rem;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .services-page-banner {
+        height: 35vh; /* Slightly reduce height */
+    }
+    .services-page-banner-content h1 {
+        font-size: 2.2rem; /* Scale down title */
+    }
+    .services-page-banner-content p {
+        font-size: 1rem; /* Scale down subtitle */
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    .services-page-banner {
+        height: 30vh; /* Further reduce height for mobile view */
+    }
+    .services-page-banner-content h1 {
+        font-size: 1.6rem; /* Significantly scale down title */
+    }
+    .services-page-banner-content p {
+        font-size: 0.9rem; /* Significantly scale down subtitle */
+    }
+}
+
+
+/* Services Page Boxes Section - Optimized for Centralization */
+.services-boxes-section {
+    /* Centralization: Constrain width and center */
+    width: 90%; 
+    max-width: 1200px; /* Constrain section width on large screens */
+    margin: 50px auto; /* Center the whole section block */
+    text-align: center;
+    padding: 0; /* REMOVED: conflicting padding-left: 10% */
+    box-sizing: border-box;
+}
+
+.services-boxes-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.services-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default: 2 columns */
+    gap: 25px;
+    max-width: 100%; /* Ensures it fits perfectly within the parent section (1200px) */
+    width: 100%; /* Ensures it uses all available space */
+    margin: 0 auto; /* Ensures the grid itself is centered */
+}
+
+
+/* Service Box Styles (Maintained) */
+.services-box {
+    background: #fff;
+    border: 2px solid #0f0f0f; /* Maintained: Dark border */
+    padding: 25px 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-box img {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+.services-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0f0f0f;
+}
+
+.services-box p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.services-learn-more {
+    text-decoration: none;
+    font-weight: bold;
+    color: #c8102e; /* Maintained: Red link color */
+    transition: 0.3s ease;
+}
+
+.services-learn-more:hover {
+    color: #0f1b40;
+}
+
+/* Hover Effects (Maintained) */
+.services-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border-color: #c8102e; /* Maintained: Red border on hover */
+    background-color: #f2f2f2;
+}
+
+.services-box:hover h3,
+.services-box:hover p {
+    color: #0f1b40;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .services-boxes-section {
+        margin: 40px auto;
+        width: 95%; /* Use a bit more width on tablets */
+    }
+    .services-boxes-title {
+        font-size: 1.8rem;
+    }
+    .services-box h3 {
+        font-size: 1.3rem;
+    }
+    .services-box p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile (Max 580px) */
+@media (max-width: 580px) {
+    .services-boxes-grid {
+        grid-template-columns: 1fr; /* Change to 1 column */
+        gap: 20px;
+    }
+    .services-boxes-title {
+        font-size: 1.5rem;
+    }
+    .services-box {
+        padding: 20px 10px;
+    }
+}
+
+/* Partners & Clients Section - Optimized for Centralization */
+.partners-clients-section {
+    /* FIX: Set max-width and use margin: auto to center the entire section.
+       The 107% width was causing horizontal scroll issues. */
+    max-width: 1200px; 
+    width: 90%; 
+    margin: 50px auto;
+    padding: 0 10px; /* Small horizontal padding for edges */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.partners-clients-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Container holding both groups (Maintained structure) */
+.partners-clients-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Partners & Clients main groups (Design Maintained & Responsive) */
+.partners-group,
+.clients-group {
+    background: #f16f33; /* Maintained: Orange background */
+    
+    padding: 20px;
+    border-radius: 12px;
+    
+    /* DESKTOP FIX: Use flex and max-width to simulate your 500px look on desktop,
+       but allow it to stack easily on mobile. */
+    width: 100%; /* Default to full width, overridden by flex below */
+    flex: 0 0 500px; /* Forces width close to 500px on large screens */
+    max-width: 500px; /* Ensures they never grow beyond 500px */
+    
+    text-align: center;
+    color: #fffcfc; /* Maintained: Off-white text */
+}
+
+/* Group title (Maintained) */
+.partners-group h3,
+.clients-group h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Inner grids for individual boxes (Maintained - already responsive due to auto-fit) */
+.partners-grid,
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+/* Individual partner/client boxes (Design Maintained) */
+.partner-box,
+.client-box {
+    background: #fff;
+    color: #000;
+    padding: 10px 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect (Design Maintained) */
+.partner-box:hover,
+.client-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    border-color: #c8102e;
+    background-color: #f2f2f2;
+    color: #0f1b40;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES (Tablet & Mobile) */
+/* --------------------------------------------- */
+
+/* Tablet/Mobile Layout (Max 1024px) */
+@media (max-width: 1024px) {
+    /* When the screen is too small for two 500px boxes plus gap, they will stack.
+       We now ensure they use the full available width when stacked. */
+    .partners-group,
+    .clients-group {
+        flex: 1 1 100%; /* Allows groups to fill 100% of the container width */
+        max-width: 95%; /* Ensures a small margin on the sides */
+    }
+}
+
+/* Small Mobile Adjustments (Max 480px) */
+@media (max-width: 480px) {
+    .partners-clients-title {
+        font-size: 1.6rem;
+    }
+    .partners-group h3,
+    .clients-group h3 {
+        font-size: 1.3rem;
+    }
+    .partners-group,
+    .clients-group {
+        padding: 15px; /* Reduce internal padding slightly */
+    }
+}
+
+/* BASE STYLES: DESKTOP & LARGE SCREENS */
+.services-cta-section {
+    width: 100%;
+    background: #0f1b40;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px 0;
+    height: auto;
+    margin: 50px auto;
+    max-width: 1200px; /* Desktop: Constrains width and centers block */
+}
+
+/* ... other content styles maintained ... */
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .services-cta-section {
+        padding: 30px 0;
+        margin: 40px auto;
+    }
+    /* ... font scaling for tablet ... */
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    .services-cta-section {
+        margin: 30px auto;
+    }
+    /* ... font scaling for mobile ... */
+}
+
+/* ===== ABOUT PAGE BANNER - Optimized for Full Width Coverage ===== */
+.banner-section-about {
+    /* FIX: Use 100vw and transform trick for guaranteed edge-to-edge width */
+    width: 100vw; 
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%); 
+    height: 50vh; /* Maintained height */
+    background: url("../img/banners/banner new.png") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center;
+    color: rgb(255, 252, 252); /* Maintained: Red text color */
+}
+
+/* Optional Content Wrapper (Recommended for proper text constraint) */
+.banner-content-wrapper {
+    max-width: 1200px;
+    width: 90%;
+    padding: 0 15px; 
+    margin: 0 auto;
+    position: relative; /* Ensure content is above any potential overlay */
+    z-index: 2;
+}
+
+.banner-content-about h1 {
+    font-size: 2.5rem; /* Base (Desktop) size */
+    font-weight: bold;
+}
+
+.banner-content-about p {
+    font-size: 1.1rem; /* Base (Desktop) size */
+    margin-top: 10px;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .banner-section-about {
+        height: 35vh; 
+    }
+    .banner-content-about h1 {
+        font-size: 2rem; 
+    }
+    .banner-content-about p {
+        font-size: 1rem; 
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    .banner-section-about {
+        height: 30vh; 
+    }
+    .banner-content-about h1 {
+        font-size: 1.5rem; 
+    }
+    .banner-content-about p {
+        font-size: 0.9rem; 
+    }
+}
+
+/* ===== ABOUT PAGE GRID LAYOUT - Optimized for Centralization ===== */
+.about-wrapper {
+    /* FIX: Constrain width and center the container */
+    max-width: 1200px;
+    width: 90%; 
+    margin: 50px auto; /* Center the whole section block */
+    
+    display: grid;
+    /* DESKTOP: Default to 2 columns */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px;
+    justify-content: center;
+    /* FIX: Removed padding-left: 5%; horizontal padding handled by width: 90% */
+    padding: 0 10px; /* Small inner padding for edges */
+    box-sizing: border-box;
+}
+
+/* ===== ABOUT BOXES (Design Maintained) ===== */
+.about-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid #004aad; /* Maintained: Blue highlight line */
+    transition: 0.3s ease;
+}
+
+.about-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.about-box h2 {
+    font-size: 1.4rem;
+    color: #004aad; /* Maintained: Blue color */
+    margin-bottom: 10px;
+    /* Removed unnecessary justify-content: center; */
+}
+
+.about-box p, 
+.about-box ul {
+    font-size: 1rem; /* Base (Desktop) size */
+    color: #333;
+    /* Removed unnecessary justify-content: center; */
+}
+
+.about-box ul {
+    padding-left: 20px;
+}
+
+.about-box ul li {
+    margin-bottom: 6px;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet Layout (Max 900px) */
+@media (max-width: 900px) {
+    .about-wrapper {
+        gap: 30px; /* Reduce gap */
+    }
+    .about-box h2 {
+        font-size: 1.3rem; /* Scale down title */
+    }
+    .about-box p,
+    .about-box ul {
+        font-size: 0.95rem; /* Scale down text */
+    }
+}
+
+/* Mobile Layout (Max 680px) */
+@media (max-width: 680px) {
+    .about-wrapper {
+        /* Mobile: Collapse to a single column */
+        grid-template-columns: 1fr; 
+        width: 95%; /* Use more screen width */
+        margin: 30px auto;
+        gap: 25px; /* Reduce gap when stacked */
+    }
+    .about-box {
+        padding: 20px;
+    }
+    .about-box h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- CONTACT SECTION BANNER - Optimized for Full Width Coverage --- */
+.banner-section-contact {
+    /* FIX: Use 100vw and transform trick for guaranteed edge-to-edge width */
+    width: 100vw; 
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+    height: 80vh; /* Maintained height */
+    background: url("../img/banners/banner new9.png") center/cover no-repeat;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center;
+    color: rgb(250, 245, 243); /* Maintained: White/Off-white text color */
+}
+
+/* Optional: Add a dark overlay for better text contrast if needed */
+.banner-section-contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3); /* Slight dark overlay */
+    z-index: 1;
+}
+
+/* Content wrapper ensures text is centered and readable */
+.banner-content-contact {
+    position: relative; 
+    z-index: 2; /* Ensures content is above the overlay */
+    max-width: 1200px;
+    width: 90%;
+    padding: 0 15px; 
+    margin: 0 auto;
+}
+
+.banner-content-contact h1 {
+    font-size: 2.5rem; /* Base (Desktop) size */
+    font-weight: bold;
+}
+
+.banner-content-contact p {
+    font-size: 1.1rem; /* Base (Desktop) size */
+    margin-top: 10px;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .banner-section-contact {
+        height: 35vh; /* Reduced height for tablets */
+    }
+    .banner-content-contact h1 {
+        font-size: 2rem; /* Scale down title */
+    }
+    .banner-content-contact p {
+        font-size: 1rem; /* Scale down paragraph */
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    .banner-section-contact {
+        height: 30vh; /* Further reduced height for mobile */
+    }
+    .banner-content-contact h1 {
+        font-size: 1.5rem; /* Significant scale down for readability */
+    }
+    .banner-content-contact p {
+        font-size: 0.9rem; /* Further scale down paragraph */
+    }
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+    background-color: #0f172a; /* Maintained: Dark blue background */
+    color: white; /* Maintained: White text */
+    padding: 50px 0; /* Add vertical padding */
+}
+
+/* New: Wrapper to constrain and center all content */
+.contact-wrapper {
+    max-width: 1200px; 
+    width: 90%; 
+    margin: 0 auto; /* Centers the content block */
+    padding: 0 10px; /* Small inner padding */
+    box-sizing: border-box;
+}
+
+/* Fix: Centralize the title and text using the wrapper instead of fixed percentage padding */
+.contact-section h2 {
+    font-size: 36px; /* Base (Desktop) size */
+    margin-bottom: 20px;
+    padding-left: 100px; /* REMOVED: conflicting fixed padding */
+    text-align: center; /* Center the main section title */
+}
+
+.contact-info p {
+    padding-left: 40px; /* REMOVED: conflicting fixed padding */
+    margin-bottom: 30px; /* Add margin below info text */
+    text-align: center; /* Center contact info text */
+
+}
+
+.contact-container {
+    /* DESKTOP: Grid template maintained (1fr 1fr) */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: flex-start; /* Ensures columns start at the top */
+}
+
+.contact-info h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left; /* Keep info heading left-aligned inside its column */
+}
+
+/* Contact Form (Design Maintained) */
+.contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+#name,
+#email,
+#service,
+#message {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #ea580c; /* Maintained: Orange color */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #c2410c;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet Layout (Max 800px) */
+@media (max-width: 800px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+    .contact-container {
+        /* Tablet: Collapse to a single column */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    .contact-info h2 {
+        font-size: 30px; /* Scale down title */
+    }
+    .contact-form {
+        padding: 30px;
+    }
+}
+
+/* Mobile Layout (Max 480px) */
+@media (max-width: 480px) {
+    .contact-wrapper {
+        width: 95%; /* Use more screen width */
+    }
+    .contact-info h2 {
+        font-size: 24px;
+        text-align: center; /* Center heading on small mobile */
+    }
+    .contact-form {
+        padding: 20px;
+    }
+    .submit-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* ===== PRODUCTS PAGE BANNER - Optimized for Full Width Coverage ===== */
+.banner-section-products {
+    /* FIX: Use 100vw and transform trick for guaranteed edge-to-edge width */
+    width: 100vw; 
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+    height: 50vh; /* Maintained height */
+    background: url("../img/banners/banner new4.png") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(245, 238, 238); /* Maintained: Dark text color */
+    box-sizing: border-box;
+   }
+
+
+
+
+/* Optional: Add a dark overlay if the dark text color needs more contrast against the image */
+/*
+.banner-section-products::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); 
+    z-index: 1;
+}
+*/
+
+/* Content wrapper ensures text is centered and readable */
+.banner-content-products {
+    position: relative; 
+    z-index: 2; /* Ensures content is above any potential overlay */
+    max-width: 1200px;
+    width: 90%;
+    padding: 0 15px; 
+    margin: 0 auto;
+}
+
+.banner-content-products h1 {
+    font-size: 2.5rem; /* Base (Desktop) size */
+    font-weight: bold;
+}
+
+.banner-content-products p {
+    font-size: 1.1rem; /* Base (Desktop) size */
+    margin-top: 10px;
+}
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet (Max 768px) */
+@media (max-width: 768px) {
+    .banner-section-products {
+        height: 35vh; /* Reduced height for tablets */
+    }
+    .banner-content-products h1 {
+        font-size: 2rem; /* Scale down title */
+    }
+    .banner-content-products p {
+        font-size: 1rem; /* Scale down paragraph */
+    }
+}
+
+/* Mobile (Max 480px) */
+@media (max-width: 480px) {
+    .banner-section-products {
+        height: 30vh; /* Further reduced height for mobile */
+    }
+    .banner-content-products h1 {
+        font-size: 1.5rem; /* Significant scale down for readability */
+    }
+    .banner-content-products p {
+        font-size: 0.9rem; /* Further scale down paragraph */
+    }
+}
+
+
+/* 1. SECTION WRAPPER: Centering and Max Width */
+.Advert-Products {
+    max-width: 1200px; 
+    width: 90%; 
+    margin: 40px auto; /* Centers the whole block */
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Title Styling */
+.Advert-Products h2 {
+    color: #c8102e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 2. GRID CONTAINER: FORCES 2 COLUMNS ON DESKTOP */
+.videos-grid-container {
+    display: grid;
+    /* This rule GUARANTEES 2 equal columns on desktop screens */
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    margin-top: 20px;
+}
+
+/* 3. INDIVIDUAL BOX: Aspect Ratio and Centering */
+.video-box {
+    background: #d2e2a6; /* Maintained background color */
+    border-radius: 5px;
+    padding: 10px;
+    
+    /* Aspect Ratio Fix: Creates a consistent height for all boxes */
+    position: relative;
+    padding-bottom: 45%; /* Determines the height of the box based on its width */
+    height: 0;
+    
+    /* Flexbox for centering video element/content */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 4. VIDEO ELEMENT: Positioning and Sizing */
+.video-box video { 
+    /* Targets ALL <video> tags inside the box */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Max sizing ensures video never exceeds the defined box space */
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto;
+    height: auto;
+    
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* VIDEO CAPTION STYLING */
+.video-caption {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+
+    background: rgba(255, 255, 255, 0.85);
+    padding: 6px 8px;
+    box-sizing: border-box;
+
+    border-top: 1px solid #ccc;
+}
+
+
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES (Guaranteed 1-per-Row on Mobile) */
+/* --------------------------------------------- */
+
+/* Tablet/Mobile Layout (Max 768px) - COLLAPSE POINT */
+@media (max-width: 768px) {
+    .videos-grid-container {
+        /* Force single column below 768px */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .video-box {
+        padding-bottom: 60%; /* Taller aspect ratio looks better on phones */
+    }
+}
+
+/* Product Gallery Section - Optimized for Centralization */
+.Galary-Products {
+    /* FIX: Constrain width and center the content block */
+    max-width: 1200px; 
+    width: 90%; 
+    margin: 50px auto; 
+    padding: 20px 0;
+    
+    background-color: #f3f5f8; /* Maintained: Light grey background */
+    box-sizing: border-box;
+}
+
+/* Fix: Centralize the main title */
+.Galary-Products h2 {
+    color: #0f0f0f;
+    padding-left: 0; /* REMOVED: conflicting fixed padding */
+    padding-top: 0; 
+    margin-bottom: 30px;
+    text-align: center; /* Center the title */
+    font-size: 2rem;
+}
+
+/* Grid Container - Optimized */
+.Picture-Products {
+    display: grid;
+    /* DESKTOP: Default to 4 columns */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Increased gap slightly for clarity */
+    justify-content: center;
+    padding: 0 10px; /* REMOVED: conflicting padding-left: 2% */
+    /* border-color: #f00707; - Border on container is usually not necessary */
+}
+
+/* Individual Image Container */
+.Picture-Products > div {
+    /* Optional: Add styling to the box itself */
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image doesn't bleed out */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Image Fix: Solves Vertical Stretching */
+.Picture-Products img {
+    width: 100%; /* Image fills its container width */
+    height: 250px; /* FIXED HEIGHT: Set a reasonable fixed height for all boxes */
+    /* FIX: Forces the image to cover the box without distortion */
+    object-fit: cover; 
+    object-position: center;
+    padding-left: 0; /* REMOVED: conflicting padding-left: 20px */
+}
+
+/* Product Titles */
+.Picture-Products h3 {
+    color: #0c0c0c;
+    padding: 10px 0; /* Adjusted vertical padding */
+    text-align: center; /* Center the product name */
+    padding-left: 0; /* REMOVED: conflicting fixed padding */
+    font-size: 1.1rem;
+}
+
+/* Unused/Conflicting CSS from your code block (Left out of the final structure)
+.Advert-Products h2 { ... } 
+*/
+
+/* --------------------------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------------------------- */
+
+/* Tablet Layout (Max 992px) */
+@media (max-width: 992px) {
+    .Picture-Products {
+        /* Tablet: Collapse to 3 columns */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px;
+    }
+    .Picture-Products img {
+        height: 220px; /* Adjust image height slightly */
+    }
+}
+
+/* Small Tablet / Large Mobile (Max 768px) */
+@media (max-width: 768px) {
+    .Picture-Products {
+        /* Small Tablet: Collapse to 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Picture-Products img {
+        height: 200px;
+    }
+}
+
+/* Mobile Layout (Max 480px) */
+@media (max-width: 480px) {
+    .Galary-Products {
+        width: 95%;
+        margin: 30px auto;
+    }
+    .Picture-Products {
+        /* Mobile: Collapse to a single column */
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .Picture-Products img {
+        height: 180px; /* Final height for single column mobile view */
+    }
+}
+ /* ===== PAYMENT PAGE BANNER ===== */
+.banner-section-payment {
+    width: 110%;
+    height: 45vh;
+    background: url("../img/banners/2.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(10, 10, 10);
+}
+
+/* FOOTER SECTION - Optimized for Full Width Background and Centralized Content */
+#footer {
+    background-color: #033442ef; /* Maintained: Dark blue background */
+    padding: 50px 0; /* Vertical padding */
+    margin-top: 50px;
+    width: 100%; 
+    box-sizing: border-box;
+    color: #f8fafc; /* Set base text color for the whole footer */
+}
+
+/* --------------------------------------------- */
+/* CONTAINER & LAYOUT */
+/* --------------------------------------------- */
+.footer-container {
+    /* Centralization: Constrain width and center content columns */
+    max-width: 1200px; 
+    width: 90%; 
+    margin: 0 auto; 
+    padding: 0 10px; 
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusted to space-between for cleaner edge alignment */
+    align-items: flex-start;
+    gap: 30px; /* Increased gap for better spacing */
+}
+
+.footer-box {
+    /* Flex and min/max settings maintained for desktop flow */
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+}
+
+/* --------------------------------------------- */
+/* TEXT AND HEADING ALIGNMENT FIX */
+/* --------------------------------------------- */
+
+/* FIX: Ensure all h3 headings are centered in their box on all devices */
+.footer-box h3 {
+    margin-bottom: 15px;
+    color: #fffcfc;
+    text-align: center; /* GUARANTEES the sub-heading is centered */
+    font-size: 1.6rem; /* Slightly larger heading */
+}
+
+/* Content box 1: Follow Us (Icons) */
+.footer-box:nth-child(1) {
+    /* Align icons block to the center */
+    text-align: center; 
+}
+
+/* Content box 2: Contact Us (Address/Text) */
+.footer-box:nth-child(2) {
+    /* Align all address text to the left for better readability on desktop */
+    text-align: left; 
+}
+
+/* Content box 3: Copyright */
+.footer-box:nth-child(3) {
+    /* Align copyright block to the right on desktop, since it's the last item */
+    text-align: right; 
+}
+
+
+.footer-box p {
+    font-size: 14px;
+    color: #f7f1f1;
+    line-height: 1.5;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    /* Ensures the icon container is a block element for easy text-align centering */
+    display: block; 
+}
+
+.social-icons a {
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s;
+    padding-bottom: 0; /* Removed padding-bottom from image, use margin-bottom on box instead */
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+
+/* --------------------------------------------- */
+/* 📱 MEDIA QUERIES for Footer */
+/* --------------------------------------------- */
+
+/* Tablet and Mobile (Max 768px) - STACKING AND CENTERING */
+@media (max-width: 768px) {
+    #footer {
+        padding: 30px 0; 
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Space between stacked boxes */
+    }
+    .footer-box {
+        max-width: 90%; 
+        min-width: auto;
+        /* FIX: When stacked, ALL content in ALL boxes should be centered */
+        text-align: center !important; 
+    }
+    .footer-box h3 {
+        font-size: 1.5rem;
+    }
+}
