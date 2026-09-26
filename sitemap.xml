@@ -1,19 +1,28 @@
-https://snemerson.com/
-  
-  
-    https://snemerson.com/about.html
-  
-  
-    https://snemerson.com/contact.html
-  
-  
-    https://snemerson.com/payment.html
-  
-  
-    https://snemerson.com/products.html
-  
-  
-    https://snemerson.com/services.html
-  
-  
-    https://snemerson.com/admin-login.html
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://snemerson.com/</loc>
+    </url>
+
+    <url>
+        <loc>https://snemerson.com/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://snemerson.com/contact.html</loc>
+    </url>
+
+    <url>
+        <loc>https://snemerson.com/payment.html</loc>
+    </url>
+
+    <url>
+        <loc>https://snemerson.com/products.html</loc>
+    </url>
+
+    <url>
+        <loc>https://snemerson.com/services.html</loc>
+    </url>
+
+</urlset>
