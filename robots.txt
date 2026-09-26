@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin-login.html
+
+Sitemap: https://snemerson.com/sitemap.xml
